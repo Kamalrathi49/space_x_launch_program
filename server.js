@@ -7,8 +7,8 @@ import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux'
 import express from 'express';
 import { StaticRouter } from 'react-router'
-import App from '../src/App';
-import configureStore from '../src/redux/configureStore'
+import App from './src/App';
+import configureStore from './src/redux/configureStore'
 
 const PORT = process.env.PORT || 3006;
 const app = express();
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
             </Provider>
     );
 
-    const indexFile = path.resolve('../build/index.html');
+    const indexFile = path.resolve('./build/index.html');
 
     fs.readFile(indexFile, 'utf8', (err, data) => {
         if (err) {

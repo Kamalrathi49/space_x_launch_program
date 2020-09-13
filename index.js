@@ -10,4 +10,4 @@ require('@babel/register')({
     ]
 })
 
-require('./server/server')
+require('./server')
