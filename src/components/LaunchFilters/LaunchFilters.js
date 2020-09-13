@@ -16,7 +16,7 @@ const LaunchFilters = (props) => {
 
     return (
         <div className="launch-filters">
-            <h3>Filters</h3>
+            <h2>Filters</h2>
             {filterCategories}
         </div>
     );
