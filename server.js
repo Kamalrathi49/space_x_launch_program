@@ -37,6 +37,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.use(express.static('../build'));
+app.use(express.static('./build'));
 
 app.listen(PORT, () => { console.log(`Listening on Port ${PORT}`) })
