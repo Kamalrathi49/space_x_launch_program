@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     fs.readFile(indexFile, 'utf8', (err, data) => {
         if (err) {
             console.log("Error", err);
-            return res.status(500).send("Something went wrong");
+            return res.status(500).send("Something went wrong",err);
         }
 
         return res.send(
