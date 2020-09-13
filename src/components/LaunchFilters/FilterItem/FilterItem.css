@@ -1,0 +1,13 @@
+.filter-item {
+  background-color: #c5e09b;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.filter-item.active {
+  background-color: #7cba01;
+}

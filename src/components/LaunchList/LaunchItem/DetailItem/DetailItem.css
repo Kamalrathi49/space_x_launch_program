@@ -1,0 +1,14 @@
+.launch-detail {
+  display: flex;
+  margin-bottom: 10px;
+}
+.launch-detail.type-list {
+  display: block;
+}
+.detail-value {
+  color: #474f98;
+  margin-left: 5px;
+}
+.type-list .detail-value {
+  margin-left: 30px;
+}

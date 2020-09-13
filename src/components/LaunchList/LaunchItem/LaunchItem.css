@@ -1,0 +1,10 @@
+.launch-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  align-self: start;
+}
+.launch-name {
+  color: #474f98;
+  margin: 15px 0;
+}

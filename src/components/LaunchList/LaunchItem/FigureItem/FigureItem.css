@@ -1,0 +1,8 @@
+.figure-item {
+  background: #f2f2f2;
+  text-align: center;
+}
+.figure-item img {
+  width: 100%;
+  height: auto;
+}

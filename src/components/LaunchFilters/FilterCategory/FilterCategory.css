@@ -1,0 +1,19 @@
+.filter-category {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-type {
+  display: inline-block;
+  border-bottom: 1.5px solid #c5bcbf;
+  padding: 0 25px 2px 25px;
+  margin: 0 0 10px 0;
+}
+
+.filter-values {
+  display: grid;
+  grid-template-columns: minmax(25%, auto) minmax(25%, auto);
+  justify-content: space-between;
+  padding: 0 10px;
+  grid-gap: 15px;
+}

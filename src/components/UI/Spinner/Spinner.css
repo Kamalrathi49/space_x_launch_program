@@ -1,0 +1,41 @@
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid blue;
+  border-right: 5px solid green;
+  border-bottom: 5px solid red;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+.backdrop {
+  position: fixed;
+  background: rgb(255 255 255 / 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

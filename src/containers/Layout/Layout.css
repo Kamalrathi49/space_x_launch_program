@@ -1,0 +1,16 @@
+.main-container {
+  display: grid;
+  grid-gap: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-container {
+    grid-template-columns: minmax(auto, 20%) minmax(auto, 80%);
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1023px) {
+  .main-container {
+    grid-template-columns: minmax(auto, 25%) minmax(auto, 75%);
+  }
+}
