@@ -3,11 +3,10 @@ import './LazyImage.css';
 
 function LazyImage(props) {
 
-    const { src, alt } = props;
     const element = useRef(null);
-    let observer;
 
     useEffect(() => {
+        let observer;
         observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const { isIntersecting } = entry;
@@ -23,9 +22,9 @@ function LazyImage(props) {
         observer.observe(element.current);
 
         return () => { observer && observer.disconnect() };
-    }, [src])
+    }, [props.src])
 
-    return <img alt={alt} ref={element} />;
+    return <img alt={props.alt} ref={element} />;
 }
 
 export default LazyImage;
