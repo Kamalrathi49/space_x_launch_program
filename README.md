@@ -9,11 +9,11 @@ It is designed to be a singe page application, for which following libraries are
 - redux
 - react-router
 
-The application is server by a node.js server which also renders the initial landing page. Following libraries are used by the node.js server:
+The application is served by a node.js server which also renders the initial landing page. Following libraries are used by the node.js server:
 - express
 - babel
 
-Following libraries are used for unit testing the frontend application:
+Unit test cases are writen by using following libraries:
 - jest
 - enzyme
 
