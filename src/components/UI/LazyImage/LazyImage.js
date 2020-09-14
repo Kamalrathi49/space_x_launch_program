@@ -18,11 +18,11 @@ function LazyImage(props) {
             })
         },
             {
-                rootMargin: '0px 0px 200px 0px',
+                rootMargin: '0px 0px 500px 0px',
             });
         observer.observe(element.current);
 
-        return () => observer.disconnect();
+        return () => { observer && observer.disconnect() };
     }, [src])
 
     return <img alt={alt} ref={element} />;

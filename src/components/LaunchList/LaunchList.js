@@ -13,7 +13,7 @@ const LauchList = (props) => {
             launch_success={data.launch_success}
             landing_success={data.landing_success}
             flight_number={data.flight_number}
-            key={data.launch_date_unix+data.flight_number}
+            key={data.flight_number}
         />
     }
     )

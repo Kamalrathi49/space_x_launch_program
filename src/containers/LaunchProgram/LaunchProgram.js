@@ -9,7 +9,7 @@ import { getParam, setParam } from '../../utils/utils';
 import './LaunchProgram.css';
 
 
-class LaunchProgram extends React.Component {
+export class LaunchProgram extends React.Component {
 
     state = {
         filterData: [{
@@ -70,13 +70,24 @@ class LaunchProgram extends React.Component {
 
     render() {
         let launchList = <div></div>;
-        if (this.props.launchProgram.loading) {
-            launchList = <Spinner />
-        }
+
         if (this.props.launchProgram.success) {
-            launchList = this.props.launchProgram.launchData.length ?
+            const renderList = this.props.launchProgram.launchData.length ?
                 <LauchList launchData={this.props.launchProgram.launchData} /> :
                 <div className=".no-data"><h2>No data found</h2></div>;
+
+            if (this.props.launchProgram.loading) {
+                launchList = <>
+                    <Spinner />
+                    {renderList}
+                </>
+            }
+            else {
+                launchList = renderList
+            }
+        }
+        else if (this.props.launchProgram.loading) {
+            launchList = <Spinner />
         }
         else if (this.props.launchProgram.error) {
             launchList = <div className=".no-data"><h2>Error occurred while fetching data</h2></div>

@@ -11,10 +11,9 @@ const launchProgramReducer = (state = initialState, action) => {
     switch (action.type) {
         case actions.LAUNCH_DATA_FETCH_START: {
             return {
-                launchData: null,
+                ...state,
                 loading: true,
                 error: false,
-                success: false
             }
         }
         case actions.LAUNCH_DATA_FETCH_ERROR: {
@@ -34,7 +33,6 @@ const launchProgramReducer = (state = initialState, action) => {
                         mission_id: data.mission_id,
                         launch_year: data.launch_year,
                         launch_success: data.launch_success + "",
-                        launch_date_unix: data.launch_date_unix,
                         flight_number: data.flight_number,
                         landing_success: data.rocket.first_stage.cores.some(core => core.land_success === null) ? "NA"
                             : data.rocket.first_stage.cores.every(core => core.land_success) + ""
