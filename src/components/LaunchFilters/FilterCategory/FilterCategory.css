@@ -1,19 +1,36 @@
 .filter-category {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 5px 0 35px 0;
 }
 
 .filter-type {
   display: inline-block;
-  border-bottom: 1.5px solid #c5bcbf;
-  padding: 0 25px 2px 25px;
-  margin: 0 0 10px 0;
+  border-bottom: 2px solid #c4bdbb;
+  width: 75%;
+  margin: 0 0 15px 0;
+  padding-bottom: 4px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .filter-values {
   display: grid;
   grid-template-columns: minmax(25%, auto) minmax(25%, auto);
   justify-content: space-between;
-  padding: 0 10px;
-  grid-gap: 15px;
+  padding: 0 25px;
+  grid-gap: 25px;
+}
+
+
+@media screen and (min-width: 701px) {
+  .filter-category{
+    margin: 5px 0 25px 0;
+  }
+  .filter-type {
+    font-size: 18px;
+  }
+  .filter-values {
+    padding: 0 15px;
+    grid-gap: 15px;
+  }
 }

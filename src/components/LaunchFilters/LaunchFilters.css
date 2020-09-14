@@ -1,6 +1,20 @@
 .launch-filters {
   background: white;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 8px;
+  padding: 10px 10px 40px 10px;
   align-self: start;
+}
+.launch-filters h2{
+  font-size: 30px;
+}
+
+@media screen and (min-width: 701px) {
+  .launch-filters {
+    padding: 10px 0px 40px 0px;
+    font-size: 8px;
+  }
+  .launch-filters h2{
+    padding: 0 10px;
+    font-size: 22px;
+  }
 }

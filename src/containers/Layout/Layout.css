@@ -11,6 +11,6 @@
 
 @media screen and (min-width: 701px) and (max-width: 1023px) {
   .main-container {
-    grid-template-columns: minmax(auto, 25%) minmax(auto, 75%);
+    grid-template-columns: minmax(auto, 30%) minmax(auto, 70%);
   }
 }

@@ -1,14 +1,33 @@
 .launch-detail {
   display: flex;
-  margin-bottom: 10px;
+  align-content: center;
+  margin-bottom: 12px;
 }
 .launch-detail.type-list {
   display: block;
 }
+.detail-label {
+  font-size: 20px;
+}
+.type-list .detail-label {
+  font-size: 22px;
+}
 .detail-value {
   color: #474f98;
   margin-left: 5px;
+  font-size: 20px;
 }
 .type-list .detail-value {
   margin-left: 30px;
+  font-size: 22px;
+}
+
+
+@media screen and (min-width: 701px) {
+  .detail-label,.detail-value {
+    font-size: 16px;
+  }
+  .type-list .detail-label,.type-list .detail-value {
+    font-size: 18px
+  }
 }

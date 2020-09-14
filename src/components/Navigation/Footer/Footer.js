@@ -1,10 +1,10 @@
 import React from 'react'
 import Disclaimer from './Disclaimer/Disclaimer'
-import classes from './Footer.module.css'
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <footer className={classes.AppFooter}>
+        <footer className="app-footer">
             <Disclaimer />
         </footer>
     )

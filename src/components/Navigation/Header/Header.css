@@ -1,4 +1,11 @@
 .app-header {
-  margin-bottom: 45px;
+  margin: 25px 0 50px 0;
   padding-left: 10px;
+  font-size: 21px;
+}
+@media screen and (min-width: 701px) {
+  .app-header {
+    margin: 0 0 50px 0;
+    font-size: 16px;
+  }
 }

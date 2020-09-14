@@ -18,7 +18,7 @@ const FilterCategory = (props) => {
 
     return (
         <div className="filter-category">
-            <h3 className="filter-type">{props.filterDisplayName}:</h3>
+            <h3 className="filter-type">{props.filterDisplayName}</h3>
             <div className="filter-values">
                 {filterItems}
             </div>

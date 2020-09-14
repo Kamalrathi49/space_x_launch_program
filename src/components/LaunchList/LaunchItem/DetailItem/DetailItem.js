@@ -13,8 +13,8 @@ const DetailItem = React.memo((props) => {
 
     return (
         <div className={"launch-detail" + (isValueArray ? " type-list" : "")}>
-            <p><b>{props.label}:</b></p>
-            {detailValue}
+            <p className="detail-label"><b>{props.label}:</b></p>
+            {detailValue} 
         </div>
     );
 });
