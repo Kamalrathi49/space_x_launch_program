@@ -1,6 +1,8 @@
 .main-container {
   display: grid;
   grid-gap: 20px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 @media screen and (min-width: 1024px) {
