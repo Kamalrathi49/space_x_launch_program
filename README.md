@@ -30,7 +30,14 @@ The application is deployed on **Heroku**, which uses this github repository as 
 - Uses memoizing to prevent unnecessary rerenders, increasing the performance of functional components
 - Used best practises and performation optimizations, resulting in a high lighthouse score
 
+**Using Lighthouse in Chrome DevTools**
+
 ![lighthouse score](https://i.imgur.com/FKHQJ5n.png)
+
+**Using [web.dev](https://web.dev/measure)**
+
+![lighthouse score](https://i.imgur.com/sb3jaAH.png)
+
 
 ## Available Scripts
 
