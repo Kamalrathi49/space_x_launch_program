@@ -38,6 +38,7 @@ The application is deployed on **Heroku**, which uses this github repository as 
 
 ![lighthouse score](https://i.imgur.com/sb3jaAH.png)
 
+[web.dev report](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fspacex-launchprogram.herokuapp.com%2F)
 
 ## Available Scripts
 
