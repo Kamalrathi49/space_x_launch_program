@@ -1,4 +1,4 @@
-# Spacex Launch Programs
+# Spacex Launch Programs [![Build Status](https://travis-ci.org/prakhar-shukla/spacex-launch-programs.svg?branch=master)](https://travis-ci.org/prakhar-shukla/spacex-launch-programs)
 [View App](https://spacex-launchprogram.herokuapp.com/)
 
 ## About the project
