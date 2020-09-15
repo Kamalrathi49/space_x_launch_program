@@ -17,7 +17,7 @@ Unit test cases are writen by using following libraries:
 - jest
 - enzyme
 
-The application is deployed on **Heroku**, which uses this github repository as its source. It is configured to automatically redeploy every time something is pushed on the `master` branch
+The application is deployed on **Heroku**, and **Travis** is used for CI. It is configured to automatically trigger a build every time something is pushed on the `master` branch following which it is delivered to Heroku for deployment
 
 ## Highlights
 - This is a progressive web application, which can be installed on any PWA compatible mobile device.

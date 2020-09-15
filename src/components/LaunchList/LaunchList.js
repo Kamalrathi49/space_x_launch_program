@@ -11,13 +11,18 @@ class LauchList extends React.Component {
     observer = null;
 
     componentDidMount() {
-        this.createIntersectionObserver();
+        if (this.state.slicedList.length < this.props.launchData.length) {
+            this.createIntersectionObserver();
+        }
     }
     componentDidUpdate() {
         if (this.state.slicedList.length < this.props.launchData.length && !this.observer) {
             this.createIntersectionObserver();
         }
-    } 
+    }
+    componentWillUnmount() {
+        this.observer && this.observer.disconnect();
+    }
 
     createIntersectionObserver() {
         this.observer = new IntersectionObserver((entries) => {
@@ -29,7 +34,7 @@ class LauchList extends React.Component {
                         this.observer = this.observer.disconnect();
                         this.setState((prevState) => {
                             return {
-                                slicedList: this.props.launchData.slice(0, prevState.slicedList.length+12)
+                                slicedList: this.props.launchData.slice(0, prevState.slicedList.length + 12)
                             }
                         })
                     }
