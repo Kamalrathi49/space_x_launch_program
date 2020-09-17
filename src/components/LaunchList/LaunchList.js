@@ -59,7 +59,7 @@ class LauchList extends React.Component {
                 landing_success={data.landing_success}
                 flight_number={data.flight_number}
                 key={data.flight_number}
-                {...(this.state.slicedList.length && { ref: this.lastElement })}
+                {...(i === (this.state.slicedList.length-1) && { ref: this.lastElement })}
             />
         }
         )

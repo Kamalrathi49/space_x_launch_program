@@ -17,12 +17,12 @@ const FilterCategory = (props) => {
     )
 
     return (
-        <div className="filter-category">
+        <section className="filter-category">
             <h3 className="filter-type">{props.filterDisplayName}</h3>
             <div className="filter-values">
                 {filterItems}
             </div>
-        </div>
+        </section>
     );
 }
 
