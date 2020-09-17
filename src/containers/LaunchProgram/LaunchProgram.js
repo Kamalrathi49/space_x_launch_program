@@ -30,19 +30,26 @@ export class LaunchProgram extends React.Component {
             data: ["true", "false"],
             activeItem: this.props.query["land_success"]
         }],
-        queryString: setParam(this.props.query)
+        queryString: setParam(this.props.query),
+        dataLimit: 50
     }
 
     componentDidMount() {
-        this.props.fetchLaunchData("?limit=100" + (this.state.queryString && "&" + this.state.queryString));
+        this.props.fetchLaunchData(`?limit=${this.state.dataLimit}${this.state.queryString && "&" + this.state.queryString}`);
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.queryString !== this.state.queryString) {
-            const currentQueries = this.state.queryString;
-            const apiUrl = "?limit=100" + (currentQueries && "&" + currentQueries);
-            this.props.fetchLaunchData(apiUrl);
+        if ((prevState.queryString !== this.state.queryString) || (prevState.dataLimit !== this.state.dataLimit)) {
+            this.props.fetchLaunchData(`?limit=${this.state.dataLimit}${this.state.queryString && "&" + this.state.queryString}`);
         }
+    }
+
+    fetchMoreData = () => {
+        this.setState((prevState) => {
+            return {
+                dataLimit: prevState.dataLimit + 50
+            }
+        })
     }
 
     onFilterApply = (category, value) => {
@@ -72,25 +79,14 @@ export class LaunchProgram extends React.Component {
         let launchList = <div></div>;
 
         if (this.props.launchProgram.success) {
-            const renderList = this.props.launchProgram.launchData.length ?
-                <LauchList launchData={this.props.launchProgram.launchData} /> :
-                <div className=".no-data"><h2>No data found</h2></div>;
-
-            if (this.props.launchProgram.loading) {
-                launchList = <>
-                    <Spinner />
-                    {renderList}
-                </>
-            }
-            else {
-                launchList = renderList
-            }
-        }
-        else if (this.props.launchProgram.loading) {
-            launchList = <Spinner />
+            launchList =
+                <LauchList
+                    launchData={this.props.launchProgram.launchData}
+                    dataLimit={this.state.dataLimit}
+                    fetchMoreData={this.fetchMoreData} />
         }
         else if (this.props.launchProgram.error) {
-            launchList = <div className=".no-data"><h2>Error occurred while fetching data</h2></div>
+            launchList = <div className="no-data"><h2>Error occurred while fetching data</h2></div>
         }
 
         return <>
@@ -99,6 +95,7 @@ export class LaunchProgram extends React.Component {
             </ErrorBoundary>
             <ErrorBoundary>
                 {launchList}
+                {this.props.launchProgram.loading && <Spinner />}
             </ErrorBoundary>
         </>
     }

@@ -11,7 +11,7 @@ function LazyImage(props) {
             entries.forEach(entry => {
                 const { isIntersecting } = entry;
                 if (isIntersecting) {
-                    element.current.src = props.src;
+                    props.src && (element.current.src = props.src);
                     observer = observer.disconnect();
                 }
             })

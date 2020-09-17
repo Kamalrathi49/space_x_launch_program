@@ -17,15 +17,15 @@ describe('<LaunchProgram/>', () => {
     })
     it('should render <LauchList/> when receiving launchData', () => {
         wrapper.setProps({ launchProgram: { success: true, launchData:[{},{}] } })
-        expect(wrapper.contains(<LauchList launchData={[{},{}]}/>)).toEqual(true);
+        expect(wrapper.containsMatchingElement(<LauchList launchData={[{},{}]}/>)).toEqual(true);
     })
     it('should render an error message in case of error', () => {
         wrapper.setProps({ launchProgram: { error: true } })
-        expect(wrapper.containsMatchingElement(<div className=".no-data"><h2>Error occurred while fetching data</h2></div>)).toEqual(true);
+        expect(wrapper.containsMatchingElement(<div className="no-data"><h2>Error occurred while fetching data</h2></div>)).toEqual(true);
     })
     it('should render <Spinner/> when loading', () => {
         wrapper.setProps({ launchProgram: { loading: true } })
-        expect(wrapper.contains(<Spinner/>)).toEqual(true);
+        expect(wrapper.containsMatchingElement(<Spinner/>)).toEqual(true);
     })
     it('should render <LaunchFilters/>', () => {
         expect(wrapper.containsMatchingElement(<LaunchFilters/>)).toEqual(true);

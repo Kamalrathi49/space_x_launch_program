@@ -5,19 +5,22 @@ import './LaunchList.css';
 class LauchList extends React.Component {
 
     state = {
-        slicedList: this.props.launchData.slice(0, 12),
+        slicedIndex: 12,
     }
     lastElement = React.createRef(null);
     observer = null;
 
     componentDidMount() {
-        if (this.state.slicedList.length < this.props.launchData.length) {
+        if (this.state.slicedIndex < this.props.launchData.length) {
             this.createIntersectionObserver();
         }
     }
     componentDidUpdate() {
-        if (this.state.slicedList.length < this.props.launchData.length && !this.observer) {
+        if (this.state.slicedIndex < this.props.launchData.length && !this.observer) {
             this.createIntersectionObserver();
+        }
+        else if (this.state.slicedIndex >= this.props.dataLimit && this.props.launchData.length === this.props.dataLimit) {
+            this.props.fetchMoreData()
         }
     }
     componentWillUnmount() {
@@ -29,12 +32,12 @@ class LauchList extends React.Component {
             entries.forEach(entry => {
                 const { isIntersecting } = entry;
                 if (isIntersecting) {
-                    if (this.state.slicedList.length < this.props.launchData.length) {
+                    if (this.state.slicedIndex < this.props.launchData.length) {
                         this.lastElement = React.createRef(null);
                         this.observer = this.observer.disconnect();
                         this.setState((prevState) => {
                             return {
-                                slicedList: this.props.launchData.slice(0, prevState.slicedList.length + 12)
+                                slicedIndex: prevState.slicedIndex + 12
                             }
                         })
                     }
@@ -48,21 +51,26 @@ class LauchList extends React.Component {
     }
 
     render() {
-
-        const launchItems = this.state.slicedList.map((data, i) => {
-            return <LaunchItem
-                mission_patch_small={data.mission_patch_small}
-                mission_name={data.mission_name}
-                mission_id={data.mission_id}
-                launch_year={data.launch_year}
-                launch_success={data.launch_success}
-                landing_success={data.landing_success}
-                flight_number={data.flight_number}
-                key={data.flight_number}
-                {...(i === (this.state.slicedList.length-1) && { ref: this.lastElement })}
-            />
+        let launchItems;
+        if (this.props.launchData && this.props.launchData.length) {
+            launchItems = this.props.launchData.slice(0, this.state.slicedIndex).map((data, i) => {
+                return <LaunchItem
+                    mission_patch_small={data.mission_patch_small}
+                    mission_name={data.mission_name}
+                    mission_id={data.mission_id}
+                    launch_year={data.launch_year}
+                    launch_success={data.launch_success}
+                    landing_success={data.landing_success}
+                    flight_number={data.flight_number}
+                    key={data.flight_number}
+                    {...(i === (this.state.slicedIndex - 1) && { ref: this.lastElement })}
+                />
+            }
+            )
+        } else {
+            launchItems = <div className="no-data"><h2>No data found</h2></div>
         }
-        )
+
         return (
             <div className="launch-list" >
                 { launchItems}
