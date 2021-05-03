@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/space_x_launch_program/static/css/main.04f15ee2.chunk.css",
+    "main.js": "/space_x_launch_program/static/js/main.fe6fbca9.chunk.js",
+    "runtime-main.js": "/space_x_launch_program/static/js/runtime-main.7df4c164.js",
+    "static/js/2.d90f1a04.chunk.js": "/space_x_launch_program/static/js/2.d90f1a04.chunk.js",
+    "index.html": "/space_x_launch_program/index.html",
+    "static/js/2.d90f1a04.chunk.js.LICENSE.txt": "/space_x_launch_program/static/js/2.d90f1a04.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7df4c164.js",
+    "static/js/2.d90f1a04.chunk.js",
+    "static/css/main.04f15ee2.chunk.css",
+    "static/js/main.fe6fbca9.chunk.js"
+  ]
+}
